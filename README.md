@@ -10,6 +10,12 @@ To facilitate the notifications, this repo uses an [Azure Function](https://azur
 
 ![webhook flow](images/flow.png)
 
+This may sound complicated but it's really bad at all. Automate sends a JSON payload with a lot of data in it. This is great in that can get a lot of detail, but bad because Teams expects a simple text payload. This function picks out some important bits of data and concatenates them into a simple text string for Teams. It also adds a link so you can go straight to the full message in Automate.
+
+ We end up with a nice message like these:
+
+![example notifications](images/notifications.png)
+
 ## Usage
 
 It may feel weird, but we need to set up things starting at the destination, then working back to the origin of the notification.
