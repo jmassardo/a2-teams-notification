@@ -77,6 +77,15 @@ That wasn't too bad. Let's move onto the last bit and set up the actual notifica
 1. Check the `Webhooks` box
 1. Give the notification a name, select the failure type, then enter the invoke url for the function and click `Save Notification`.
 
+## Customizing
+
+In the highly likely event one would like to customize the notifications, the heavy lifting is done by the [run.ps1](HttpTrigger/run.ps1) script. Lines 13-17 assemble the message for converge failures and lines 25-29 assemble the message for compliance failures.
+
+The contents of the payloads aren't officially documented, however, the code is available on GitHub.
+
+* [Converge Failures](https://github.com/chef/automate/blob/master/components/notifications-service/server/lib/formatters/webhook.ex#L23-L38)
+* [Compliance Failures](https://github.com/chef/automate/blob/master/components/notifications-service/server/lib/formatters/webhook.compliance.ex#L21-L34)
+
 ## Closing
 
 If all went well, you should start seeing notifications within a few minutes (give or take, depending on your client interval/splay).
