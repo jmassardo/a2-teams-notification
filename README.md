@@ -81,10 +81,7 @@ That wasn't too bad. Let's move onto the last bit and set up the actual notifica
 
 In the highly likely event one would like to customize the notifications, the heavy lifting is done by the [run.ps1](HttpTrigger/run.ps1) script. Lines 13-17 assemble the message for converge failures and lines 25-29 assemble the message for compliance failures.
 
-The contents of the payloads aren't officially documented, however, the code is available on GitHub.
-
-* [Converge Failures](https://github.com/chef/automate/blob/master/components/notifications-service/server/lib/formatters/webhook.ex#L23-L38)
-* [Compliance Failures](https://github.com/chef/automate/blob/master/components/notifications-service/server/lib/formatters/webhook.compliance.ex#L21-L34)
+While the example above only shows a few data points, the notification payloads contain quite a bit of information. You can see example payloads in the [Automate Docs](https://docs.chef.io/automate/notifications/#webhook-notification-payload)
 
 ## Closing
 
